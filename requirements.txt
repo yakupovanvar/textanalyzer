@@ -1,0 +1,5 @@
+tensorflow_hub==0.7.0
+pandas==1.2.3
+streamlit==0.78.0
+numpy==1.19.2
+tensorflow==2.0.0

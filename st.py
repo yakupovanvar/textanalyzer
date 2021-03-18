@@ -6,6 +6,16 @@ import tensorflow_hub as hub
 import base64
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
+session_config = tf.ConfigProto(
+    inter_op_parallelism_threads=flags_obj.inter_op_parallelism_threads,
+    intra_op_parallelism_threads=flags_obj.intra_op_parallelism_threads,
+    allow_soft_placement=True)
+
+distribution_strategy = distribution_utils.get_distribution_strategy(
+    flags_core.get_num_gpus(flags_obj), flags_obj.all_reduce_alg)
+
+run_config = tf.estimator.RunConfig(
+      train_distribute=distribution_strategy, session_config=session_config)
 
 """
 #  Streamlit app - Text Analysis

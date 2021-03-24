@@ -15,7 +15,7 @@ os.environ['KMP_DUPLICATE_LIB_OK']='True'
 #   flags_core.get_num_gpus(flags_obj), flags_obj.all_reduce_alg)
 
 #run_config = tf.estimator.RunConfig(
-      train_distribute=distribution_strategy, session_config=session_config)
+#      train_distribute=distribution_strategy, session_config=session_config)
 
 """
 #  Streamlit app - Text Analysis
